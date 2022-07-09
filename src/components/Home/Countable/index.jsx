@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import Typography from "@mui/material/Typography";
-import {Button} from "@mui/material";
+import {Button, Grid} from "@mui/material";
 
 class Countable extends Component{
     constructor(props) {
@@ -24,6 +24,13 @@ class Countable extends Component{
         })
     }
 
+    resetCount(){
+        console.log("Decreased function calling");
+        this.setState({
+            count: this.state.count = 0
+        })
+    }
+
     render() {
         return(
             <div>
@@ -39,14 +46,26 @@ class Countable extends Component{
                 >
                     Increased
                 </Button>
+
                 <Button
                     variant="contained"
                     onClick={() => {
                         console.log('clicked');
                         this.decrementCount();
                     }}
+                    style={{marginLeft: '15px'}}
                 >
                     Decreased
+                </Button>
+                <Button
+                    variant="contained"
+                    onClick={() => {
+                        console.log('clicked');
+                        this.resetCount();
+                    }}
+                    style={{marginLeft: '15px'}}
+                >
+                    Reset
                 </Button>
             </div>
         );
