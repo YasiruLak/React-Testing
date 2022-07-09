@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import Typography from "@mui/material/Typography";
-import {Button, Grid} from "@mui/material";
+import GDSEButton from "../../Comman/Button";
 
 class Countable extends Component{
     constructor(props) {
@@ -37,36 +37,68 @@ class Countable extends Component{
                 <Typography variant="h3" gutterBottom component="div">
                     Count: {this.state.count}
                 </Typography>
-                <Button
-                    variant="contained"
-                    onClick={() => {
-                        console.log('clicked');
-                        this.incrementCount();
-                    }}
-                >
-                    Increased
-                </Button>
+                {/*<Button*/}
+                {/*    variant="contained"*/}
+                {/*    onClick={() => {*/}
+                {/*        console.log('clicked');*/}
+                {/*        this.incrementCount();*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*    Increased*/}
+                {/*</Button>*/}
 
-                <Button
+                {/*<Button*/}
+                {/*    variant="contained"*/}
+                {/*    onClick={() => {*/}
+                {/*        console.log('clicked');*/}
+                {/*        this.decrementCount();*/}
+                {/*    }}*/}
+                {/*    style={{marginLeft: '15px'}}*/}
+                {/*>*/}
+                {/*    Decreased*/}
+                {/*</Button>*/}
+                {/*<Button*/}
+                {/*    variant="contained"*/}
+                {/*    onClick={() => {*/}
+                {/*        console.log('clicked');*/}
+                {/*        this.resetCount();*/}
+                {/*    }}*/}
+                {/*    style={{marginLeft: '15px'}}*/}
+                {/*>*/}
+                {/*    Reset*/}
+                {/*</Button>*/}
+
+                <GDSEButton
+                    label="Increase!"
                     variant="contained"
                     onClick={() => {
-                        console.log('clicked');
-                        this.decrementCount();
+                        console.log('Increase button clicked!')
+                        this.incrementCount()
+
                     }}
-                    style={{marginLeft: '15px'}}
-                >
-                    Decreased
-                </Button>
-                <Button
-                    variant="contained"
+                />
+                <GDSEButton
+                    label="Decrease!"
+                    variant="outlined"
                     onClick={() => {
-                        console.log('clicked');
-                        this.resetCount();
+                        console.log('Decrease button clicked!')
+                        this.decrementCount()
+
                     }}
                     style={{marginLeft: '15px'}}
-                >
-                    Reset
-                </Button>
+                />
+                <GDSEButton
+                    label="Reset!"
+                    variant="outlined"
+                    color="error"
+                    // disabled={true}
+                    onClick={() => {
+                        console.log('Reset button clicked!')
+                        this.resetCount()
+
+                    }}
+                    style={{marginLeft: '15px'}}
+                />
             </div>
         );
     }
