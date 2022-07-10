@@ -10,6 +10,19 @@ import { styleSheet } from "./style";
 class Login extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            userName: 'admin',
+            password: 'admin',
+            formData: {
+                user_name: '',
+                password: ''
+            }
+
+        }
+    }
+
+    checkValidity(){
+
     }
 
     render() {
@@ -23,12 +36,39 @@ class Login extends Component{
                         </Typography>
                     </div>
                     <div className={classes.form_container}>
-                        <TextField id="outlined-basic" label="User name" variant="outlined" />
-                        <TextField id="outlined-basic" type= "password" label="Password" variant="outlined" />
+                        <TextField
+                            id="outlined-basic"
+                            label="User name"
+                            variant="outlined"
+                            onChange={(e) => {
+                                console.log(e.target.value)
+                                let formData = this.state.formData
+                                formData.user_name = e.target.value
+                                this.setState({ formData })
+                            }}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            type= "password"
+                            label="Password"
+                            variant="outlined"
+                            onChange={(e) => {
+                                console.log(e.target.value)
+                                let formData = this.state.formData
+                                formData.password = e.target.value
+                                this.setState({ formData })
+                            }}
+                        />
 
                     </div>
                     <div className={classes.btn_container}>
-                        <GDSEButton variant="contained" label="Login"/>
+                        <GDSEButton
+                            variant="contained"
+                            label="Login"
+                            onClick={()=>{
+                                this.checkValidity();
+                            }}
+                        />
                     </div>
                 </div>
             </div>
