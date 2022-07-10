@@ -4,6 +4,7 @@ import { Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import GDSEButton from "../../components/Comman/Button";
 import { styleSheet } from "./style";
+import GDSESnackBar from "../../components/Comman/SnackBar";
 
 
 
@@ -16,8 +17,10 @@ class Login extends Component{
             formData: {
                 user_name: '',
                 password: ''
-            }
-
+            },
+            open: false,
+            message: '',
+            severity: ''
         }
     }
 
@@ -91,6 +94,16 @@ class Login extends Component{
                         />
                     </div>
                 </div>
+                <GDSESnackBar
+                    open={this.state.open}
+                    onClose={() => {
+                        this.setState({ open: false })
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant="filled"
+                />
             </div>
         )
     }
