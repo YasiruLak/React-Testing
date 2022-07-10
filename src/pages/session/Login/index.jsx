@@ -2,9 +2,9 @@ import React,{ Component } from "react";
 import { withStyles } from "@mui/styles";
 import { Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import GDSEButton from "../../components/Comman/Button";
+import GDSEButton from "../../../components/Comman/Button";
 import { styleSheet } from "./style";
-import GDSESnackBar from "../../components/Comman/SnackBar";
+import GDSESnackBar from "../../../components/Comman/SnackBar";
 
 
 
