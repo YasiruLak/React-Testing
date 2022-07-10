@@ -1,8 +1,8 @@
 import { withStyles } from '@mui/styles';
 import { Component } from 'react';
-import GDSEButton from '../../components/common/Button';
-import not_found from '../../assets/img/not_found.jpeg';
+import not_found from '../../assets/images/not_found.jpeg';
 import { Link } from 'react-router-dom';
+import GDSEButton from "../../components/Comman/Button";
 
 const styleSheet = () => ({
     container: {
