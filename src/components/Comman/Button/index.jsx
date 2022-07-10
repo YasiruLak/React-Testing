@@ -1,21 +1,23 @@
 import React,{Component} from "react";
 import PropTypes from "prop-types";
+import Button from '@mui/material/Button';
 
 class GDSEButton extends Component {
-    static propsTypes = {
+    static propTypes = {
         onClick: PropTypes.func,
         children: PropTypes.node,
         variant: PropTypes.string,
+        className: PropTypes.any,
         label: PropTypes.string,
         size: PropTypes.string,
         disabled: PropTypes.bool,
         color: PropTypes.string,
-        types: PropTypes.string,
+        type: PropTypes.string,
         endIcon: PropTypes.string,
-        startIcon: PropTypes.string,
-
+        startIcon: PropTypes.string
     }
-    static defaultProps = {
+
+    static defautlProps = {
         className: "",
         color: "primary",
         label: "",
@@ -54,7 +56,7 @@ class GDSEButton extends Component {
         } = this.props;
 
         return(
-            <GDSEButton
+            <Button
                 className={className}
                 size={size}
                 endIcon={endIcon}
@@ -66,7 +68,7 @@ class GDSEButton extends Component {
                 style={style}
             >
                 {this.renderChildren(label, children)}
-            </GDSEButton>
+            </Button>
         )
     }
 }
